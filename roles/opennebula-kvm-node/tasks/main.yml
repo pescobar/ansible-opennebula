@@ -1,0 +1,40 @@
+---
+
+- name: Install epel yum repository
+  yum: name=epel-release state=present
+
+- name: Install libselinux-python (required by ansible to manage selinux)
+  yum: name=libselinux-python state=present
+  tags: selinux
+
+- name: disable selinux
+  selinux: state=disabled
+  tags: selinux
+
+- name: install Opennebula kvm node packages
+  yum: name={{ item }} state=present
+  with_items:
+    - opennebula-node-kvm
+
+- name: Enable and install services
+  service: name={{ item }} state=started enabled=yes
+  with_items:
+    - messagebus.service
+    - libvirtd.service
+    #- nfs.service
+
+- name: Replace ethernet configuration to enable bridge
+  template:
+    src=ethernet-config.j2
+    dest=/etc/sysconfig/network-scripts/ifcfg-{{ ansible_default_ipv4.interface }}
+    backup=yes
+    
+- name: Copy bridge configuration file
+  template:
+    src=bridge-config-dhcp.j2
+    dest=/etc/sysconfig/network-scripts/ifcfg-br0
+    backup=yes
+    
+- name: Restart network service
+  service: name=network state=restarted
+   

@@ -1,0 +1,6 @@
+- hosts: kvmnodes
+  user: root
+
+  roles:
+    - opennebula-yum-repos
+    - opennebula-kvm-node

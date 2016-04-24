@@ -1,0 +1,9 @@
+---
+
+- name: Install opennebula yum repo
+  template: 
+    src=opennebula.repo.j2
+    dest=/etc/yum.repos.d/opennebula.repo
+    owner=root 
+    mode=644
+

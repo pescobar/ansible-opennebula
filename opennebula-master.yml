@@ -1,0 +1,8 @@
+---
+
+- hosts: masternode
+  user: root
+
+  roles:
+    - opennebula-yum-repos
+    - opennebula-master
