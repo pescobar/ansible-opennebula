@@ -31,6 +31,13 @@
   with_items:
     - opennebula-server
     - opennebula-sunstone
+    
+- name: Edit /etc/one/oned.conf so it listens in all interfaces (default is localhost only)
+  lineinfile: 
+    dest=/etc/one/oned.conf
+    backup=yes
+    regexp="^LISTEN_ADDRESS = \"127.0.0.1\""
+    line="LISTEN_ADDRESS = \"0.0.0.0\""
 
 - name: Install required ruby gems
   shell:  yes | /usr/share/one/install_gems
