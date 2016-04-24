@@ -49,7 +49,7 @@
     owner=oneadmin
     mode=600
 
-- name: Enable and install services
+- name: Enable and start services
   service: name={{ item }} state=started enabled=yes
   with_items:
     - opennebula
