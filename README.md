@@ -12,4 +12,7 @@ Edit file `hosts` to add your machine hostname and then deploy both playbooks in
 `ansible-playbook -i hosts opennebula-kvm-node.yml`
 
 
+Once all playbooks have finished correctly you should be able to connect to `http://open-nebula-machine:9869/`. You can find the user/pass to login in the webui in `~oneadmin/.one/one_auth`. This user and password is automatically generated during installation.
+
+Now you can follow the section `2.1.4 Step 3. Basic Usage` in the documentation to add a host and virtual resources and then boot your first virtual machine.
 
