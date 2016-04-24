@@ -1,6 +1,6 @@
 Ansible playbooks to deploy a basic open nebula setup based on "Quickstart: OpenNebula on CentOS 7 and KVM" in [OpenNebula 4.14 docs] (http://docs.opennebula.org/pdf/4.14/opennebula_4.14_design_and_installation_guide.pdf)
 
-This is not ready for a production deployment. It will use sqlite and won't setup nfs so it only supports deploying both the master and kvm-host in the same machine. By now it's only useful to do a test deployment of OpenNebula running all services in the same physical machine. This playbook asumes the network interface used by opennebula is the same interface used to connect/deploy with ansible. 
+This is not ready for a production deployment. It will use sqlite and won't setup nfs so it only supports deploying both the master and kvm-host in the same machine. By now it's only useful to do a test deployment of OpenNebula running all services in the same physical machine. This playbook asumes the network interface used by opennebula is the same interface used to connect/deploy with ansible and you are using dhcp to configure this network interface. 
 
 Tested only in Centos 7.2
 
