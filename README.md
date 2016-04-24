@@ -16,5 +16,5 @@ Edit file `hosts` to add your machine hostname and then deploy both playbooks in
 
 Once all playbooks have finished correctly you should be able to connect to `http://open-nebula-machine:9869/`. You can find the webui user/pass in `~oneadmin/.one/one_auth`. This user and password is automatically generated during installation.
 
-Now you can follow the section `2.1.4 Step 3. Basic Usage` in the documentation to add a kvm-host (which will be localhost) and virtual resources and then boot your first virtual machine.
+Now you can follow the section `2.1.4 Step 3. Basic Usage` in the documentation to add a kvm-host (which will be localhost) and virtual resources and then boot your first virtual machine. This must be done as `oneadmin` user so don't forget to do `su - oneadmin`
 
